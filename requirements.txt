@@ -3,3 +3,4 @@ fastapi
 unicorn
 joblib
 pytest
+httpx2
