@@ -1,6 +1,7 @@
 scikit-learn
 fastapi
-unicorn
+uvicorn
 joblib
+mlflow
 pytest
-httpx2
+httpx

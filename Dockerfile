@@ -1,19 +1,19 @@
-#pull the python image from docker hub
-#use a lightweight python image
+# Pull the Python image from Docker Hub.
+# Use a lightweight Python image.
 FROM python:3.14-slim
-#set the working directory in the container
+# Set the working directory in the container.
 WORKDIR /app
-#copy the dependencies file to the working directory
+# Copy the dependencies file to the working directory.
 COPY requirements.txt .
-#install dependencies
+# Install dependencies.
 RUN pip install -r requirements.txt
 
-#copy application code and saved model inside/app
+# Copy application code and the saved model into /app.
 COPY . .
-#Document the port used by the FastAPI app
+# Document the port used by the FastAPI app.
 EXPOSE 8000
-#start the api server when container is ready
-#0.0.0.0 -allows connections through the container's IP address
+# Start the API server when the container is ready.
+# 0.0.0.0 allows connections through the container's IP address.
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 
